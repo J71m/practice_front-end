@@ -1,0 +1,40 @@
+<!--<button pButton (click)="goBack()" label="Back" class="back-button ui-button-secondary"></button>-->
+
+
+<div class="container">
+    <form class="form-inline"
+        (ngSubmit)="doSearch()">
+        <div class="form-group">
+            <div id="search-by-id">
+                <input type="search"
+                       class="form-control"
+                       placeholder="ID"
+                       name="search-by-id"
+                       [(ngModel)]="termId">
+
+                <input type="search"
+                       class="form-control"
+                       placeholder="Nickname"
+                       name="search-by-nickname"
+                       [(ngModel)]="termNickname">
+            </div>
+            <!--<div id="search-by-nickname">-->
+                <!--<input type="search"-->
+                       <!--class="form-control"-->
+                       <!--placeholder="ID"-->
+                       <!--name="search-by-id"-->
+                       <!--[(ngModel)]="termId">-->
+            <!--</div>-->
+
+        </div>
+        <button type="submit"
+                class="btn btn-primary">
+            Search
+        </button>
+    </form>
+    <hr />
+
+    <ul>
+        <li *ngFor="let User of userService.users">{{User.id}}</li>
+    </ul>
+</div>
