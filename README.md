@@ -1,4 +1,4 @@
-### Javelin mängijatehaldus
+# Javelin mängijatehaldus
 
 
 ## Eesmärk
