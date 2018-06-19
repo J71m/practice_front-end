@@ -19,7 +19,7 @@ Selle repo alla laadimisel on vaja projekti spetsiifilised packagid installida k
 angular/src/app/user.service.ts failis on vaja vahetada domeen õige peale, kui ei jooksuta samas masinas back-endi.
 Tehes projekti kaustas käskluse "ng serve" saab kõige kiiremini püsti front-endi, mis hakkab jooksma localhost:4200 aadressil
 
-##Screenshot
+## Screenshot
 ![login](https://raw.githubusercontent.com/J71m/practice_front-end/master/login.JPG)
 ![table1](https://raw.githubusercontent.com/J71m/practice_front-end/master/table1.JPG)
 ![player_details](https://raw.githubusercontent.com/J71m/practice_front-end/master/player_detail.JPG)
