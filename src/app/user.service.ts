@@ -15,9 +15,9 @@ const httpOptions = {
 export class UserService {
   private apiUrl = 'http://127.0.0.1:1111/playermgmt';
 
-  // private usersUrl = 'http://127.0.0.1:1111/playermgmt/players/allplayers';
-   private nickUrl = 'http://127.0.0.1:1111/playermgmt/nickname';
-   private idUrl = 'http://127.0.0.1:1111/playermgmt/players';
+  // private usersUrl = apiUrl+'/players/allplayers';
+   private nickUrl = apiUrl+'/nickname';
+   private idUrl = apiUrl+'/players';
 
 
   constructor(
@@ -48,20 +48,11 @@ export class UserService {
           catchError(this.handleError('getUsers', []))
       );
     }
-
-    //Selleks, et saaks bannimist lisada
-    // updateUser (user: User): Observable<any> {
-    //     return this.http.put(this.apiUrl, user, httpOptions).pipe(
-    //         //tap(_ => this.log(`updated hero id=${hero.id}`)),
-    //         catchError(this.handleError<any>('updateUser'))
-    //     );
-    // }
-
+    
     searchUsers (term: any, type: string): Observable<User[]> {
       console.log('term', term);
         let urlByType = (type == 'id') ? `${this.idUrl}` : `${this.nickUrl}`;
         let url = `${urlByType}/${term}`;
-        // const url = `${this.idUrl}/${term}`;
         console.log('search url:', url);
 
         return this.http.get<User[]>(url).pipe(
@@ -72,7 +63,6 @@ export class UserService {
   private handleError<T>(operation = 'operation', result?: T) {
       return (error:any): Observable<T> => {
           console.error(error);
-          //this.log(`${operation} failed: ${error.message}`);
           return of (result as T);
       };
   }
